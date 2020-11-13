@@ -541,6 +541,12 @@ extern "C"
 	AS_API void            *asFunction_SetUserData(asIScriptFunction *f, void *userData)                                         { return f->SetUserData(userData); }
 	AS_API void            *asFunction_GetUserData(const asIScriptFunction *f)                                                   { return f->GetUserData(); }
 
+
+	///////////////////////////////////////////
+	// asIasIBinaryStream
+	
+	// Memory managment
+	AS_API asIBinaryStream*    asStream_Create(asBINARYREADFUNC_t read, asBINARYWRITEFUNC_t write, void* param)                                                                                        { return new asCBinaryStreamC(write, read, param); }
 }
 
 END_AS_NAMESPACE

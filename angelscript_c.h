@@ -428,6 +428,7 @@ typedef struct
 extern "C"
 {
 #endif
+
 	// Engine
 	AS_API asIScriptEngine *asCreateScriptEngine(asDWORD version);
 	AS_API const char      *asGetLibraryVersion();
@@ -918,6 +919,12 @@ extern "C"
 	// User data
 	AS_API void            *asFunction_SetUserData(asIScriptFunction *f, void *userData);
 	AS_API void            *asFunction_GetUserData(const asIScriptFunction *f);
+
+	///////////////////////////////////////////
+	// asIBinaryStream
+	
+	// Memory managment
+	AS_API asIBinaryStream*    asStream_Create(asBINARYREADFUNC_t read, asBINARYWRITEFUNC_t write);
 
 #ifdef __cplusplus
 }
